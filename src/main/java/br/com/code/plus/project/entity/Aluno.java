@@ -8,9 +8,12 @@ public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id")
-    private Long id;
-    @Column(name= "nome", length = 200, nullable = true)
+    private Integer id;
+    @Column(name= "nome_completo", length = 200, nullable = true)
     private String nome;
+
+    @Column(name= "user_name", length = 200, nullable = true)
+    private String userName;
     @Column(name= "email", length = 50, nullable = true)
     private String email;
     @Column(name= "senha", columnDefinition = "TEXT", nullable = true)
@@ -18,11 +21,24 @@ public class Aluno {
     @Column(name= "telefone", length = 15, nullable = true)
     private String telefone;
 
-    public Long getId() {
+    public Aluno(Integer id, String nome, String userName, String email, String senha, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.userName = userName;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+    }
+
+    public Aluno() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
