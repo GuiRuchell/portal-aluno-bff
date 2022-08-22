@@ -11,8 +11,6 @@ public class Aluno {
     private Integer id;
     @Column(name= "nome_completo", length = 200, nullable = true)
     private String nome;
-    @Column(name= "user_name", length = 200, nullable = true)
-    private String userName;
     @Column(name= "email", length = 50, nullable = true)
     private String email;
     @Column(name= "senha", columnDefinition = "TEXT", nullable = true)
@@ -20,10 +18,9 @@ public class Aluno {
     @Column(name= "telefone", length = 15, nullable = true)
     private String telefone;
 
-    public Aluno(Integer id, String nome, String userName, String email, String senha, String telefone) {
+    public Aluno(Integer id, String nome, String email, String senha, String telefone) {
         this.id = id;
         this.nome = nome;
-        this.userName = userName;
         this.email = email;
         this.senha = senha;
         this.telefone = telefone;
@@ -31,14 +28,6 @@ public class Aluno {
 
     public Aluno() {
 
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public Integer getId() {
