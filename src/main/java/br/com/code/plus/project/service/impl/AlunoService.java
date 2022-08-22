@@ -18,9 +18,26 @@ public class AlunoService implements AlunoInterface {
 
     @Override
     public Aluno findAlunoById(Integer id) {
-        Aluno user = alunoRepository.findById(id)
+        Aluno aluno = alunoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aluno não encontrado na base de dados"));
 
-        return user;
+        return aluno;
+    }
+
+    @Override
+    public Aluno insertAluno(Aluno aluno) {
+        return alunoRepository.save(aluno);
+    }
+
+    @Override
+    public Aluno updateAluno(Integer id, Aluno aluno) {
+        Aluno response = alunoRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Aluno não encontrado na base de dados, não foi possivel atualizar"));
+
+        return alunoRepository.save(response);
+    }
+    @Override
+    public void deleteAluno(Integer id) {
+        alunoRepository.deleteById(id);
     }
 }

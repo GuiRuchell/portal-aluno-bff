@@ -11,7 +11,6 @@ public class Aluno {
     private Integer id;
     @Column(name= "nome_completo", length = 200, nullable = true)
     private String nome;
-
     @Column(name= "user_name", length = 200, nullable = true)
     private String userName;
     @Column(name= "email", length = 50, nullable = true)
@@ -32,6 +31,14 @@ public class Aluno {
 
     public Aluno() {
 
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Integer getId() {
