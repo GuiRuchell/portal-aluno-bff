@@ -4,30 +4,26 @@ import javax.persistence.*;
 
 @Entity
 @Table(name= "aluno")
-public class Aluno {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id")
     private Integer id;
     @Column(name= "nome_completo", length = 200, nullable = true)
-    private String nome;
+    private String name;
     @Column(name= "email", length = 50, nullable = true)
     private String email;
     @Column(name= "senha", columnDefinition = "TEXT", nullable = true)
-    private String senha;
+    private String password;
     @Column(name= "telefone", length = 15, nullable = true)
-    private String telefone;
+    private String phone;
 
-    public Aluno(Integer id, String nome, String email, String senha, String telefone) {
+    public Student(Integer id, String name, String email, String password, String phone) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.email = email;
-        this.senha = senha;
-        this.telefone = telefone;
-    }
-
-    public Aluno() {
-
+        this.password = password;
+        this.phone = phone;
     }
 
     public Integer getId() {
@@ -38,12 +34,12 @@ public class Aluno {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -54,19 +50,19 @@ public class Aluno {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
