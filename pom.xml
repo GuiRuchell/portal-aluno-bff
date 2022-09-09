@@ -8,8 +8,8 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>flowhr.backend.competencias</groupId>
-    <artifactId>BackendCompetencias</artifactId>
+    <groupId>br.com.code.plus.project</groupId>
+    <artifactId>PortalAluno</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Projeto Api Code++</name>
     <description>Demo project for Spring Boot</description>
