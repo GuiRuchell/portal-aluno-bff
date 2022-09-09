@@ -1,5 +1,6 @@
 package br.com.code.plus.project.dto.student;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,10 +8,13 @@ import lombok.Setter;
 @Setter
 public class InStudentDto {
 
-    private Integer id;
+    @ApiModelProperty(value = "Student's name")
     private String name;
+    @ApiModelProperty(value = "Student's email")
     private String email;
+    @ApiModelProperty(value = "Student's password")
     private String password;
+    @ApiModelProperty(value = "Student's phone")
     private String phone;
 
 }

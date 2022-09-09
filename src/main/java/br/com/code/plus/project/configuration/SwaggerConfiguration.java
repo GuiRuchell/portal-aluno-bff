@@ -35,8 +35,6 @@ public class SwaggerConfiguration {
                 .consumes(getContentType())
                 .produces(getContentType())
                 .apiInfo(this.getApiInfo());
-
-
     }
 
     private Set<String> getContentType() {
