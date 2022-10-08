@@ -14,12 +14,15 @@ import javax.persistence.*;
 @Entity
 @Table(name= "aluno")
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
     @Column(name = "nome_completo", length = 200, nullable = true)
     private String name;
+    @Column(name= "user_name", length = 200, nullable = true)
+    private String userName;
     @Column(name = "email", length = 50, nullable = true)
     private String email;
     @Column(name = "senha", columnDefinition = "TEXT", nullable = true)

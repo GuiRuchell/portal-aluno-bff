@@ -15,4 +15,5 @@ public abstract class StudentMapper {
     public abstract Student inRegistrationDtoToRegistration(InStudentDto inStudentDto);
 
     public abstract OutStudentDto OutRegistrationDtoToRegistration(Student student);
+
 }
