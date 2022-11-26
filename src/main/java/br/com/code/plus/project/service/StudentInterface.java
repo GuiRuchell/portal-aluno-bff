@@ -1,12 +1,11 @@
 package br.com.code.plus.project.service;
 
-import br.com.code.plus.project.dto.student.InStudentDto;
-import br.com.code.plus.project.dto.student.OutStudentDto;
+import br.com.code.plus.project.entity.Student;
 
 public interface StudentInterface {
 
-    OutStudentDto findStudentById(Integer id);
-    OutStudentDto insertStudent(InStudentDto inStudentDto);
-    OutStudentDto updateStudent(Integer id, InStudentDto inStudentDto);
+    Student findStudentById(Integer id);
+    Student insertStudent(Student student);
+    Student updateStudent(Integer id, Student student);
     void deleteStudent(Integer id);
 }

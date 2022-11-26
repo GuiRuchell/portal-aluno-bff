@@ -1,7 +1,6 @@
 package br.com.code.plus.project.controller;
 
-import br.com.code.plus.project.dto.student.InStudentDto;
-import br.com.code.plus.project.dto.student.OutStudentDto;
+import br.com.code.plus.project.entity.Student;
 import br.com.code.plus.project.service.impl.StudentService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -28,23 +27,23 @@ public class StudentController {
             @ApiResponse(code = 500, message = "An exception was generated"),
     })
     @GetMapping("/{id}")
-    public ResponseEntity<OutStudentDto> findAlunoById(@PathVariable Integer id) {
-        OutStudentDto outStudentDto = studentService.findStudentById(id);
-        return new ResponseEntity<>(outStudentDto, HttpStatus.OK);
+    public ResponseEntity<Student> findAlunoById(@PathVariable Integer id) {
+        Student student = studentService.findStudentById(id);
+        return new ResponseEntity<>(student, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Responsible for creating students")
     @PostMapping
-    public ResponseEntity<OutStudentDto> createAluno(@RequestBody InStudentDto inStudentDto) {
-        OutStudentDto outStudentDto = studentService.insertStudent(inStudentDto);
-        return new ResponseEntity<>(outStudentDto, HttpStatus.CREATED);
+    public ResponseEntity<Student> createAluno(@RequestBody Student student) {
+        Student response = studentService.insertStudent(student);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Responsible for updating students")
     @PutMapping("/{id}")
-    public ResponseEntity<OutStudentDto> updateAluno(@PathVariable Integer id, @RequestBody InStudentDto inStudentDto) {
-        OutStudentDto outStudentDto = studentService.updateStudent(id, inStudentDto);
-        return new ResponseEntity<>(outStudentDto, HttpStatus.CREATED);
+    public ResponseEntity<Student> updateAluno(@PathVariable Integer id, @RequestBody Student student) {
+        Student response = studentService.updateStudent(id, student);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Responsible for deleting students")

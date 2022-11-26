@@ -19,15 +19,13 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "nome_completo", length = 200, nullable = true)
+    @Column(name = "nome_completo", length = 200)
     private String name;
-    @Column(name= "user_name", length = 200, nullable = true)
-    private String userName;
-    @Column(name = "email", length = 50, nullable = true)
+    @Column(name = "email", length = 50)
     private String email;
-    @Column(name = "senha", columnDefinition = "TEXT", nullable = true)
+    @Column(name = "senha", columnDefinition = "TEXT")
     private String password;
-    @Column(name = "telefone", length = 15, nullable = true)
+    @Column(name = "telefone", length = 15)
     private String phone;
 
 }
