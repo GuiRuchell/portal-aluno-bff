@@ -38,6 +38,7 @@ public class StudentService implements StudentInterface {
         response.setPhone(student.getPhone());
         response.setEmail(student.getEmail());
         response.setPassword(student.getPassword());
+        response.setUserName(response.getUserName());
 
         return studentRepository.save(response);
     }

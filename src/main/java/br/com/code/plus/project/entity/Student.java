@@ -21,6 +21,8 @@ public class Student {
     private Integer id;
     @Column(name = "nome_completo", length = 200)
     private String name;
+    @Column(name = "user_name", length = 200)
+    private String userName;
     @Column(name = "email", length = 50)
     private String email;
     @Column(name = "senha", columnDefinition = "TEXT")
